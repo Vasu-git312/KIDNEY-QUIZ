@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Know Your Kidneys! - Interactive Quiz Game</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Know Your Kidneys!</h1>
+            <p class="tagline">Test your knowledge with our interactive quiz!</p>
+        </header>
+
+        <!-- Welcome Screen -->
+        <div id="welcome-screen" class="screen active">
+            <div class="welcome-content">
+                <h2>Welcome to Bio-world!</h2>
+                <p>Select a category and difficulty to begin your quiz adventure.</p>
+                
+                <div class="quiz-options">
+                    <div class="option-group">
+                        <label for="category">Category:</label>
+                        <select id="category">
+                            <option value="9">Anatomy of the kidney</option>
+                            <option value="17">Dialysis Technology</option>
+                            
+                        </select>
+                    </div>
+                    
+                    <div class="option-group">
+                        <label for="difficulty">Difficulty:</label>
+                        <select id="difficulty">
+                            <option value="easy">Easy</option>
+                            <option value="medium">Medium</option>
+                            <option value="hard">Hard</option>
+                        </select>
+                    </div>
+                    
+                    <div class="option-group">
+                        <label for="questions">Questions:</label>
+                        <select id="questions">
+                            <option value="5">5</option>
+                            <option value="10" selected>10</option>
+                            <option value="15">15</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <button id="start-btn" class="btn">Start Quiz</button>
+            </div>
+        </div>
+
+        <!-- Loading Screen -->
+        <div id="loading-screen" class="screen">
+            <div class="loader"></div>
+            <p>Loading your quiz questions...</p>
+        </div>
+
+        <!-- Quiz Screen -->
+        <div id="quiz-screen" class="screen">
+            <div class="quiz-header">
+                <div class="quiz-info">
+                    <p class="category-display">Category: <span id="current-category">Anatomy of the kidney</span></p>
+                    <p class="difficulty-display">Difficulty: <span id="current-difficulty">Medium</span></p>
+                </div>
+                <div class="quiz-progress">
+                    <div class="progress-bar">
+                        <div id="progress-fill"></div>
+                    </div>
+                    <p class="progress-text">Question <span id="current-question">1</span> of <span id="total-questions">10</span></p>
+                </div>
+            </div>
+            
+            <div class="quiz-content">
+                <div id="timer">
+                    <div class="timer-circle">
+                        <span id="time-left">20</span>
+                    </div>
+                </div>
+                
+                <h2 id="question-text">Question text will appear here</h2>
+                
+                <div id="answers-container">
+                    <!-- Answer options will be inserted here by JavaScript -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Results Screen -->
+        <div id="results-screen" class="screen">
+            <h2>Quiz Complete!</h2>
+            
+            <div class="score-display">
+                <div class="score-circle">
+                    <div class="score-inner">
+                        <span id="score-percentage">0%</span>
+                        <span class="score-label">Score</span>
+                    </div>
+                </div>
+            </div>
+            
+            <p>You answered <span id="correct-answers">0</span> out of <span id="results-total-questions">10</span> questions correctly.</p>
+            
+            <div class="stats">
+                <div class="stat-item">
+                    <i class="fas fa-check-circle"></i>
+                    <span id="highest-streak">0</span>
+                    <p>Best Streak</p>
+                </div>
+                <div class="stat-item">
+                    <i class="fas fa-bolt"></i>
+                    <span id="average-time">0</span>s
+                    <p>Avg. Time</p>
+                </div>
+            </div>
+            
+            <div class="results-actions">
+                <button id="review-btn" class="btn secondary">Review Answers</button>
+                <button id="new-quiz-btn" class="btn">New Quiz</button>
+            </div>
+            
+            <div id="answer-review" class="hidden">
+                <h3>Review Your Answers</h3>
+                <div id="review-container">
+                    <!-- Answer review will be inserted here by JavaScript -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>Created with <i class="fas fa-heart"></i> by SE Mech</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
